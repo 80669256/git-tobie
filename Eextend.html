@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+
+    <script>
+        //json
+        var json={a:1,b:2};
+        var json2={c:3,d:4,a:101};
+        var json3={e:110};
+
+        var con=angular.extend(json,json2,json3);
+
+        console.log(con);
+
+        //arr
+
+        var arr=[1,2,3];
+        var arr2=[4,5,6,7];
+
+        var c=angular.extend(arr,arr2);
+
+        console.log(c);
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

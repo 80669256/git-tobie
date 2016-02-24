@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mk">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="angular.js"></script>
+    <script>
+        var app=angular.module('mk',[]);
+
+        //ctrl1
+        app.controller('ctrl1',function($scope){
+            $scope.$on('a',function(event,data){
+                $scope.data=data;
+
+                //给子级传递数据
+                $scope.$broadcast('new_data',$scope.data+10);
+            });
+        });
+
+        //ctrl2
+        app.controller('ctrl2',function($scope){
+            $scope.change=function(){
+                //console.log($scope.count);
+                $scope.$emit('a',$scope.count);
+            };
+        });
+
+        //ctrl3
+        app.controller('ctrl3',function($scope){
+            $scope.$on('new_data',function(event,data){
+                //console.log(data);
+
+                $scope.name=data;
+            });
+        });
+    </script>
+</head>
+<body>
+<div ng-controller="ctrl1">
+    {{data}}
+
+    <div ng-controller="ctrl2">
+        <input type="number" ng-model="count" ng-change="change()">
+    </div>
+
+    <div ng-controller="ctrl3">
+        {{name}}
+    </div>
+</div>
+</body>
+</html>
+
+
+
+

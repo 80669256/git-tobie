@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        li{
+            margin: 10px;
+        }
+    </style>
+    <script src="angular.js"></script>
+
+    <script>
+
+        var app = angular.module('app',[]);
+        app.controller('buyCar',['$scope',function(scope){
+            scope.data =[
+                {'name':'衣服','price':'200','count':3},
+                {'name':'裤子','price':'300','count':5},
+                {'name':'帽子','price':'40','count':1}
+            ];
+            scope.sum = function(){
+                var res = 0
+                angular.forEach(scope.data,function(item){
+                    res+= item.price*item.count;
+                });
+                return res;
+            }
+
+
+        }])
+    </script>
+
+
+</head>
+<body ng-controller="buyCar">
+    <ul>
+        <li ng-repeat="item in data">{{item.name}}：{{item.price | currency:"￥"}}/件， <input   type="number" ng-model="item.count"  min="0">件,总价：<input type="text" disabled value="{{item.count*item.price | currency:'￥'}}"></li>
+
+    </ul>
+    合计:{{sum() | currency:'￥'}}
+</body>
+</html>

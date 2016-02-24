@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background: #ccc;
+        }
+    </style>
+
+</head>
+<body>
+
+<input type="checkbox" ng-model="a">
+<br>
+{{a}}
+
+<input type="checkbox" ng-model="b">
+<div id="div1" ng-show="b"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+    <script>
+        var app = angular.module('app',[]);
+        app.controller('ctrl',['$scope','$timeout',function(scope,timeout){
+            scope.name = "shandian";
+            timeout(function(){
+                scope.name = "ljx";
+            },1000);
+        }])
+    </script>
+
+
+</head>
+<body ng-controller="ctrl">
+
+{{name}}
+</body>
+</html>

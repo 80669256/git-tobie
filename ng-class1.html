@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background: #ccc;
+        }
+        .box{
+            border: 10px solid #000;
+        }
+        .box2{
+            background: red !important;
+        }
+    </style>
+    <script src="angular.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+<input type="checkbox" ng-model="a">
+<input type="checkbox" ng-model="b">
+<div id="div1" ng-class="{box:a,box2:b}"></div>
+</body>
+</html>
+
+
+
+

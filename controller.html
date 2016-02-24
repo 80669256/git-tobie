@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+    <script>
+        //angular.module(模块名，依赖模块，配置函数)
+        var app = angular.module('app',[]);
+
+        //app.controller(控制器名称,回调函数)
+        app.controller('aaa',function($scope){//创建一个控制器
+            $scope.name= "a:123";
+        });
+
+        app.controller('bbb',function($scope){
+            $scope.name = "b:123";
+        })
+
+    </script>
+
+</head>
+<body>
+    <div ng-controller="aaa">
+        {{name}}
+
+        <div ng-controller="bbb">
+            {{name}}
+        </div>
+    </div>
+
+</body>
+</html>

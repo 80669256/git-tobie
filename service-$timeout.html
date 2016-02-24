@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+
+    <script>
+        var app = angular.module('app',[]);
+
+        app.controller('ctrl',function($scope,$timeout,$interval){
+            $scope.name = 1;
+            $scope.num = 1000;
+            $timeout(function(){
+
+                $scope.name = 2;
+            },1000);
+
+            $interval(function(){
+                $scope.num++;
+            },30);
+        });
+    </script>
+</head>
+<body ng-controller="ctrl">
+
+{{name}},{{num}}
+</body>
+</html>

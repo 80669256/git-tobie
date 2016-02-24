@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+
+
+</head>
+<body ng-init="arr=[1,2,3,4,5]">
+
+<div ng-repeat="i in arr">{{i}}</div>
+
+<ul ng-init="arr2=['apple','banana','orange','pear','tomato']">
+    <li ng-repeat="value in arr2">{{value}}</li>
+</ul>
+
+<ul ng-init="arr3=['apple','banana','orange','pear','tomato']">
+    <li ng-repeat="(key,value) in arr3">{{key}} -> {{value}}</li>
+</ul>
+
+<ul ng-init="json={a:1,b:2,c:3,d:4}">
+    <li ng-repeat="(key,value) in json">{{key}} -> {{value}}</li>
+</ul>
+</body>
+</html>

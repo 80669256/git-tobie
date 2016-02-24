@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mk">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+    </style>
+    <script src="angular.js"></script>
+    <script>
+        var app=angular.module('mk',[]);
+
+        app.controller('aaa',function($interval,$scope,$timeout,$log){
+            $scope.a=new Date().getTime();
+
+            $interval(function(){
+                $scope.a=new Date().getTime();
+            },1000);
+
+            $log.log('这是测试log');
+            $log.warn('这是测试warn');
+            $log.info('这是测试info');
+        });
+    </script>
+</head>
+<body>
+<div ng-controller="aaa">
+    {{a}}
+</div>
+</body>
+</html>
+
+
+
+

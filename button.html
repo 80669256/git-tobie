@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #000000;
+        }
+    </style>
+</head>
+<body ng-init="a=true;b=true">
+<input type="button" value="test" ng-click="a=!a">
+<div id="div1" ng-if="a"></div>
+
+
+<input type="button" value="test2" ng-mouseenter= "b=!b">
+
+<div id="div2" ng-show="b"></div>
+</body>
+</html>
